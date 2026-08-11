@@ -1,0 +1,26 @@
+[project]
+name = "dnstool"
+version = "0.1.0"
+description = "DNS analysis tool"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Adam Šopík", email = "xsopik03@vutbr.cz" }
+]
+
+dependencies = [
+    "requests>=2.28",
+    "ptlibs>=1.0.13,<2",
+    "dnspython>=2.6,<3",
+]
+
+[project.scripts]
+dnstool = "dnstool.main:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["dnstool*"]
+exclude = ["Output*"]
